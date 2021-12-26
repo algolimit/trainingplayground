@@ -1,0 +1,16 @@
+old_balance = 4200
+APY_rate = 1.96
+APY = old_balance * APY_rate
+final_balance = old_balance + APY
+weeks_in_year = 52.143
+weekly_apy = APY / weeks_in_year
+
+def get_weekly_balance(new_week_balance):
+  counter = 1
+  while counter <= weeks_in_year:
+    print(f"BALANCE AS OF WEEK {counter}: {new_week_balance}$")
+    counter += 1
+    
+    new_week_balance = new_week_balance + int(weekly_apy)
+
+get_weekly_balance(old_balance)
